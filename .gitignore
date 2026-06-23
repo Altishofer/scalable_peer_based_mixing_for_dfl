@@ -20,6 +20,7 @@ experiments/helper/_baseline/
 experiments/helper/_candidate/
 
 /metrics/
+*.zip
 /data/
 manager/metrics/
 *.pkl

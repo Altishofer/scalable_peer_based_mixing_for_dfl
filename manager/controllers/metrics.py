@@ -59,7 +59,6 @@ async def clear_metrics(
         if output_dir:
             from manager.config import settings
 
-            # path-traversal guard
             target_dir = (settings.METRICS_DIR / output_dir).resolve()
             if not str(target_dir).startswith(str(settings.METRICS_DIR.resolve())):
                 raise HTTPException(status_code=400, detail="output_dir must be within metrics directory")

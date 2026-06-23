@@ -62,7 +62,6 @@ def compute_indicators(config: ExperimentConfig) -> dict[str, Any]:
     max_hops = config.max_hops
 
     if config.mix_enabled:
-        # path entropy is log2 of the total number of paths summed over 1..K hops
         total_paths = sum(outbox_size ** k for k in range(1, max_hops + 1))
         path_entropy = log2(total_paths) if total_paths > 0 else 0.0
 

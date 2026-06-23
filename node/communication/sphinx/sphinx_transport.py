@@ -48,7 +48,7 @@ class SphinxTransport:
         )
 
         self._mixer = Mixer(is_live=self._peer.has_link)
-        self.n_fragments_per_model = None  # set later from the model size
+        self.n_fragments_per_model = None  # set later on from the model size
 
         self._params = SphinxParams(header_len=192, body_len=ConfigStore.sphinx_body_len, k=16, dest_len=16)
 
