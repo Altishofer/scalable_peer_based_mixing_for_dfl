@@ -1,25 +1,15 @@
 # Peer Based Mixing for Decentralized Federated Learning
 
 Peer-based decentralized federated learning (DFL) over a stateless mixnet, with full control via FastAPI and a React
-frontend.
-
-Each peer trains a local PyTorch model and exchanges updates with its neighbours through a Sphinx-format mixnet running
-over QUIC with mutual TLS. There is no central aggregator — peers aggregate whatever they receive, either with FedAvg or
-with Krum when you want some Byzantine resilience. Inline acknowledgments and message tracking keep the exchange
-reliable on top of the mixnet's cover traffic and shuffling. Every peer runs as its own Docker container; the FastAPI
-backend launches and orchestrates them, and the React dashboard streams live metrics while a run is going.
-
-It's built on FastAPI (served by Uvicorn) for the async backend, React for the dashboard, Docker to isolate each peer,
-PyTorch for the models (LeNet-5, SqueezeNet, MobileNetV2), and the [SphinxMix](https://sphinxmix.readthedocs.io/en/latest/)
-library for the packet format.
+frontend. Each peer trains a local PyTorch model and exchanges updates with its neighbors through a peer-based mixnet over QUIC with mutual TLS. 
 
 ## Quickstart
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Altishofer/MixDfl.git
-cd MixDfl
+git clone https://github.com/Altishofer/scalable_peer_based_mixing_for_dfl
+cd scalable_peer_based_mixing_for_dfl
 ```
 
 ### 2. Build the Docker image for nodes
