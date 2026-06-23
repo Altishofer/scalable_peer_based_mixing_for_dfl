@@ -1,0 +1,18 @@
+fastapi[standard]==0.136.1
+fastapi-cache2==0.2.2
+sse-starlette==3.4.4
+docker==7.1.0
+sphinxmix==0.0.7
+networkx>=3.6.1
+cryptography>=48.0.0
+
+matplotlib==3.11.0
+pandas==3.0.3
+numpy==2.4.4
+pillow==12.2.0
+ipykernel==7.3.0
+nbclient==0.11.0
+nbformat==5.10.4
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.10.0+cpu

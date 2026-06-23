@@ -1,0 +1,179 @@
+/* Card */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border: 1px solid var(--color-border);
+  transition: opacity 0.15s;
+}
+
+.card.loading {
+  opacity: 0.7;
+}
+
+.cardError {
+  border-color: var(--color-danger);
+}
+
+.errorMessage {
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  margin: 0;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-md);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.group {
+  min-width: 0;
+}
+
+.groupTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 var(--space-sm);
+}
+
+/* Stat row */
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-xs) 0;
+  font-size: var(--text-sm);
+}
+
+.statLabel {
+  color: var(--color-text-secondary);
+}
+
+.statValue {
+  font-weight: 500;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.statValue.muted {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+/* Entropy bar */
+.barContainer {
+  margin-bottom: var(--space-sm);
+}
+
+.barTrack {
+  position: relative;
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.barSegment {
+  height: 100%;
+}
+
+.barSegment:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.barSegment:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.barDisabled .barTrack {
+  opacity: 0.4;
+}
+
+.barMarker {
+  position: absolute;
+  top: -2px;
+  transform: translateX(-50%);
+}
+
+.markerLine {
+  width: 2px;
+  height: 12px;
+  background: var(--color-text);
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.barLabel {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+  margin-top: var(--space-xs);
+}
+
+/* Badges */
+.badge {
+  font-size: 11px;
+  padding: 2px var(--space-sm);
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.badgeSuccess {
+  background-color: var(--color-badge-success-bg);
+  color: var(--color-badge-success-text);
+}
+
+.badgeWarning {
+  background-color: var(--color-badge-warning-bg);
+  color: var(--color-badge-warning-text);
+}
+
+.badgeDanger {
+  background-color: var(--color-badge-danger-bg);
+  color: var(--color-badge-danger-text);
+}
+
+/* Loading skeleton */
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.skeletonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.skeletonBar {
+  height: 14px;
+  background: var(--color-border);
+  border-radius: var(--radius-sm);
+  opacity: 0.5;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.6; }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
